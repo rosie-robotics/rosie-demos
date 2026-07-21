@@ -1,0 +1,13 @@
+# Personal overrides — gitignored as robot.local.yaml
+# Copy: cp robot.local.yaml.example robot.local.yaml
+#
+# Deep-merged over robot.yaml by `rosie mcu gen-config` / `rosie drive --config`.
+# Only include keys you want to override.
+
+network:
+  mode: station
+  ssid: YOUR_TRAVEL_ROUTER_SSID
+  password: YOUR_TRAVEL_ROUTER_PASSWORD
+  # Laptop LAN IP on that Wi‑Fi (`rosie router` prints suggestions):
+  connect: tcp/192.168.x.x:7447
+  zenoh_mode: client

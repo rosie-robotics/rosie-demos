@@ -1,0 +1,19 @@
+# Generated / local
+.pio/
+.cache/
+lib/rosie
+src/generated/
+compile_commands.json
+captures/
+**/__pycache__/
+*.pyc
+.DS_Store
+
+# Personal network / secrets (merged over robot.yaml)
+**/robot.local.yaml
+**/robot.local.yml
+**/robot.local.json
+
+# Editor
+.vscode/
+.idea/

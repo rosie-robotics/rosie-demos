@@ -1,0 +1,84 @@
+# ESP32-S3 Car-1 — Rosie reference robot
+#
+# Source of truth for identity, network, pins, geometry, and gains.
+# `rosie mcu build` / gen-config → src/generated/robot_config.h
+# Edit this file for your setup (SoftAP defaults below work out of the box).
+#
+# Optional: a sibling robot.local.yaml is deep-merged on top if present
+# (convenient for maintainers; most users just edit this file).
+#
+# Framework docs: https://github.com/rosie-robotics/rosie/blob/main/docs/
+# Driver ids: `rosie drivers list`
+
+# --- Identity -----------------------------------------------------------------
+robot: car1
+fleet: null
+
+# --- Network (solo SoftAP — safe public default) ------------------------------
+# mode: softap  = car hosts Wi‑Fi; laptop joins this SSID
+#        station = car joins a dedicated AP (use robot.local.yaml)
+# connect: MCU → zenohd / `rosie router`. SoftAP laptop is often 192.168.4.2.
+# Host tools on the router laptop default to tcp/127.0.0.1:7447.
+network:
+  mode: softap
+  ssid: ESP32S3-Car-1
+  password: esp32s3-car-1
+  connect: tcp/192.168.4.2:7447
+  zenoh_mode: client
+
+# --- Base geometry (diff drive) -----------------------------------------------
+base:
+  type: diff_drive
+  wheel_diameter: 0.068
+  wheel_base: 0.13
+  ticks_per_rev: 1440
+
+# --- Motors -------------------------------------------------------------------
+motors:
+  driver: tb6612
+  pins: { pwmA: 45, ain1: 42, ain2: 47, pwmB: 46, bin1: 48, bin2: 21 }
+  pwm: { freq: 20000, res: 8, min: 55, max: 100 }
+
+# --- Encoders -----------------------------------------------------------------
+encoders:
+  pins: { left: [41, 38], right: [39, 40] }
+
+# --- Control ------------------------------------------------------------------
+control:
+  dt_ms: 20
+  teleop: { kv: 180, kw: 40, timeout_ms: 400, v_fwd: 0.25, v_turn: 1.2 }
+
+  # Outer loop: pose → Twist (m/s, rad/s)
+  goto:
+    kp_linear: 0.8
+    kp_angular: 1.5
+    v_max: 0.35
+    w_max: 1.5
+    pos_tolerance: 0.025
+    approach_dist: 0.20
+    align_tol: 0.52
+
+  # Inner loop: 0,0,0 = open-loop. Tune: rosie tune --config robot.yaml
+  velocity:
+    type: pid
+    kp: 0.0
+    ki: 0.0
+    kd: 0.0
+    i_clamp: 0.5
+
+  pose_hz: 20
+  presence_hz: 1
+
+# --- IMU (optional) -----------------------------------------------------------
+imu:
+  chip: mpu6050
+  i2c: { sda: 1, scl: 2, addr: 0x68 }
+  yaw_axis: 2
+  yaw_sign: -1
+
+# --- Camera (optional) --------------------------------------------------------
+camera:
+  board: esp32s3_eye
+  jpeg_quality: 18
+  pub_hz: 2
+  enable_default: true

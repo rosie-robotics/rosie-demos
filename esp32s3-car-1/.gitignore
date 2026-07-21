@@ -1,0 +1,12 @@
+.pio/
+.cache/
+lib/rosie
+src/generated/
+compile_commands.json
+captures/
+robot.local.yaml
+robot.local.yml
+robot.local.json
+.DS_Store
+**/__pycache__/
+*.pyc
