@@ -15,6 +15,7 @@ From a Rosie checkout (recommended while developing Rosie + demos on one machine
 pip install -e "/path/to/rosie/python[mcu]"           # required: flash / build
 # optional: OpenCV for `rosie drive` snap / live camera view
 # pip install -e "/path/to/rosie/python[mcu,camera]"
+# Quote the path — zsh treats [...] as a glob.
 rosie setup
 ```
 

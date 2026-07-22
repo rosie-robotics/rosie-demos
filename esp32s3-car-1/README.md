@@ -15,7 +15,7 @@ Framework docs:
 |-------------------|--------------|
 | DiffDriveStack, MobileBase, chip drivers | `robot.yaml` — pins, geometry, gains |
 | `rosie mcu gen-config` → `robot_config.h` | ~20-line `src/main.cpp` |
-| `rosie drive` / `tune` / `Robot` | Hardware bring-up for this car |
+| `rosie drive` / `tune` / `MobileRobot` | Hardware bring-up for this car |
 
 ## Hardware
 
@@ -30,6 +30,7 @@ Framework docs:
 pip install -e "../../rosie/python[mcu]"              # if sibling to rosie-demos
 # pip install -e "../../rosie/python[mcu,camera]"     # + OpenCV for drive snap/cam
 # or: pip install -e "/path/to/rosie/python[mcu]"
+# Quote the path — zsh treats [...] as a glob.
 rosie setup
 
 cd esp32s3-car-1   # this directory
