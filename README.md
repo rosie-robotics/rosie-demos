@@ -1,6 +1,6 @@
 # Rosie demos
 
-Example robots and projects that use the [Rosie](https://github.com/rosie-robotics/rosie)
+Example robots and projects that use the [Rosie](https://github.com/rosie-framework/rosie)
 framework. Each subdirectory is a self-contained robot project: edit
 `robot.yaml`, flash with `rosie mcu`, drive with `rosie drive`.
 
@@ -22,8 +22,8 @@ rosie setup
 Or from a released package (when published):
 
 ```bash
-pip install "rosie[mcu]"
-# pip install "rosie[mcu,camera]"
+pip install "rosie-framework[mcu]"
+# pip install "rosie-framework[mcu,camera]"
 rosie setup
 ```
 
@@ -60,8 +60,8 @@ Changes in `rosie/firmware` and `rosie/python` apply immediately to demos after
 
 ## Docs
 
-- [Getting started](https://github.com/rosie-robotics/rosie/blob/main/docs/getting-started.md)
-- [BYOR](https://github.com/rosie-robotics/rosie/blob/main/docs/byor.md)
-- [Mobile base](https://github.com/rosie-robotics/rosie/blob/main/docs/mobile-base.md)
-- [Fleet networking](https://github.com/rosie-robotics/rosie/blob/main/docs/fleet-networking.md)
+- [Getting started](https://github.com/rosie-framework/rosie/blob/main/docs/getting-started.md)
+- [BYOR](https://github.com/rosie-framework/rosie/blob/main/docs/byor.md)
+- [Mobile base](https://github.com/rosie-framework/rosie/blob/main/docs/mobile-base.md)
+- [Fleet networking](https://github.com/rosie-framework/rosie/blob/main/docs/fleet-networking.md)
 

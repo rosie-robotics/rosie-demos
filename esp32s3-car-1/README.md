@@ -1,13 +1,13 @@
 # ESP32-S3 Car-1
 
-Public **reference robot** for [Rosie](https://github.com/rosie-robotics/rosie):
+Public **reference robot** for [Rosie](https://github.com/rosie-framework/rosie):
 a Freenove ESP32-S3 CAM differential-drive car using **`robot.yaml` + DiffDriveStack**.
 
 Framework docs:
-[BYOR](https://github.com/rosie-robotics/rosie/blob/main/docs/byor.md) ·
-[Mobile base](https://github.com/rosie-robotics/rosie/blob/main/docs/mobile-base.md) ·
-[Drivers](https://github.com/rosie-robotics/rosie/blob/main/docs/drivers.md) ·
-[Fleet networking](https://github.com/rosie-robotics/rosie/blob/main/docs/fleet-networking.md).
+[BYOR](https://github.com/rosie-framework/rosie/blob/main/docs/byor.md) ·
+[Mobile base](https://github.com/rosie-framework/rosie/blob/main/docs/mobile-base.md) ·
+[Drivers](https://github.com/rosie-framework/rosie/blob/main/docs/drivers.md) ·
+[Fleet networking](https://github.com/rosie-framework/rosie/blob/main/docs/fleet-networking.md).
 
 ## Framework vs this robot
 
@@ -51,7 +51,7 @@ this laptop use `tcp/127.0.0.1:7447` by default; the MCU uses
 `network.connect` from `robot.yaml` (`tcp/192.168.4.2:7447` for SoftAP).
 
 Dedicated AP / station mode: edit `network` in `robot.yaml` (or see
-[Fleet networking](https://github.com/rosie-robotics/rosie/blob/main/docs/fleet-networking.md)).
+[Fleet networking](https://github.com/rosie-framework/rosie/blob/main/docs/fleet-networking.md)).
 
 ### Useful commands
 
